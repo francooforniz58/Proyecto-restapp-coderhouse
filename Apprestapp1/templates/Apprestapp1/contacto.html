@@ -1,0 +1,46 @@
+{% extends "Apprestapp1/padre.html" %}
+    {% load static %}
+
+{% block contenidoQueCambia %}
+<style>
+#bt1{
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    background-color: #F28123;
+    color: #fff;
+    padding: 10px 20px;
+}
+.form-container {
+        background: #ebebeb;
+        padding: 12px;
+    }
+.login-container {
+        background: #ebebeb;
+        padding: 12px;
+    }
+    .login {
+        
+        width: 400px;
+        margin: 16px auto;
+        font-size: 16px;
+    }
+    
+    /* Reset top and bottom margins from certain elements */
+    .login-header,
+    .login p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+</style>
+
+<div class="login">
+    <h2>Contactanos!</h2>
+    <div class="login-triangle"></div>
+    <form action="" class="form-container" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button type="submit" id="bt1">Enviar</button>
+        </form>
+        <h4>{{mensaje}}</h4>
+</div>
+{% endblock %}

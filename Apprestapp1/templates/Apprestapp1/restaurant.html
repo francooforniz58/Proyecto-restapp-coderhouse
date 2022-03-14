@@ -1,0 +1,36 @@
+{% extends "Apprestapp1/padre.html" %}
+    {% load static %}
+
+{% block contenidoQueCambia %}
+<style>
+.apartado{
+    display: flex;
+}
+.Blogs{
+    width: 300px;
+    /* border: 15px solid green;*/ 
+    padding: 50px;
+    margin: 20px;
+    background-color: gray;
+}
+#h1{
+    color: brown;
+}
+</style>
+
+    <h1>ENCONTRA TU RESTAURANT</h1>
+    <div class="apartado">
+    {% for restaurantes in restaurants %}
+        <div class="Blogs">
+
+            <h1 id="h1">{{restaurantes.nombre}}</h1>
+            <h2>{{restaurantes.categoria}}</h2>
+            <h3>{{restaurantes.informacion}}</h3>
+            <h4>{{restaurantes.propietario}}</h4>
+            <h5>{{restaurantes.fecha}}</h5>
+            <img height="100px" src="{{restaurants.imagen.url}}">
+
+        </div>  
+    {% endfor %}
+    </div>
+{% endblock %}

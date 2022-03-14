@@ -1,0 +1,44 @@
+{% extends "Apprestapp1/padre.html" %}
+    {% load static %}
+
+{% block contenidoQueCambia %}
+
+<style>
+#numero{
+        /* width: 300px; */
+    /* border: 15px solid green;*/ 
+        padding: 50px;
+        margin: 20px;
+        background: white;
+        /* background-color: gray; */
+        text-align: -webkit-center;
+        text-transform: uppercase;
+        outline-color: gray;
+        border: outset;
+}
+.body1{
+        background-color: #ebebeb;
+}
+#img1{
+    width: auto;
+    float: none;
+}
+</style>
+<div class="body1">
+    <div id="numero">
+    
+    <h1><i>{{restaurant.nombre}}</i></h1>
+    <h3><i>{{restaurant.categoria}}</i></h3>
+    <img height="400px" src="{{restaurant.imagen.url}}" id="img1">
+    <p style="border-top: outset;font-size: larger;"><i>{{restaurant.informacion}}</i></p>
+    <div>
+    <p style="text-align:justify;"><i>{{restaurant.propietario}}</i></p>
+    <p style="text-align:justify; line-height:2%;"><i>{{restaurant.fecha}}</i></p>
+    </div>
+    </div>
+        <a href="{% url 'Edit' restaurant.id %}" class="boxed-btn">Editar</a>
+        <a href="{% url 'Delete' restaurant.id %}" class="boxed-btn">Borrar</a>
+        <a href="{% url 'List' %}" class="boxed-btn">Regresar</a>
+</div>
+    
+{% endblock %}

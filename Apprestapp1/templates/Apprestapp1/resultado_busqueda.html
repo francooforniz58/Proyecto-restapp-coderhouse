@@ -1,0 +1,33 @@
+{% extends "Apprestapp1/padre.html" %}
+    {% load static %}
+
+{% block contenidoQueCambia %}
+
+<style>
+#jj{
+        width: 300px;
+        /* border: 15px solid green;*/ 
+        padding: 50px;
+        margin: 20px;
+        background-color: gray;
+}
+</style>
+
+    <div id="jj">
+    {% if restaurants %}
+
+    <p>Estamos buscando el: {{restaurants.nombre}}</p>
+
+	{% for restaurant in restaurants %}
+        <img height="400px" src="{{restaurant.imagen.url}} ">
+        <p>Nombre del restaurant: <i>{{restaurant.nombre}}</i></p>
+        <p>categoria: <i>{{restaurant.categoria}}</i></p>
+        <p>informacion <i>{{restaurant.informacion}}</i></p>
+        <p>fecha <i>{{restaurant.fecha}}</i></p>
+	{% endfor %}
+
+    {% endif %}
+    </div>
+    <a href="{% url 'List' %}">Regresar</a>
+
+{% endblock %}

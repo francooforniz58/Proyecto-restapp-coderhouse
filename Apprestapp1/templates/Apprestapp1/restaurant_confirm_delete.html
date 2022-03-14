@@ -1,0 +1,10 @@
+{% extends "Apprestapp1/padre.html" %}
+    {% load static %}
+
+{% block contenidoQueCambia %}
+
+    <form method="post">{% csrf_token %}
+        ¿Estás seguro que deseas borrar el restaurant "{{ object }}"?
+        <input type="submit" value="BORRAR" />
+    </form>
+{% endblock %}
