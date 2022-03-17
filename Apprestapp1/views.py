@@ -27,7 +27,7 @@ class RestaurantList(ListView):
 
 class RestaurantDetail(DetailView):
     model = Restaurant
-    template_name = "templates/restaurant_detail.html"
+    template_name = "Apprestapp1/restaurant_detail.html"
 
 
 class RestaurantCreate(LoginRequiredMixin,CreateView):
